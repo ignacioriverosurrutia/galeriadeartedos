@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* Estilos para la sección de inicio */
+        .inicio {
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .inicio h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .inicio p {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilos para la galería */
+        .galeria .row {
+            margin-top: 30px;
+        }
+
+        .galeria img {
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos para el formulario de contacto */
+        .contacto {
+            margin-top: 50px;
+        }
+
+        .contacto form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contacto .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contacto .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .contacto .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Galería de Arte</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="inicio">
+            <div class="container">
+                <h1 class="text-center">Bienvenido a la Galería de Arte</h1>
+                <p class="lead text-center">Disfruta de nuestras increíbles obras de arte</p>
+            </div>
+        </section>
+
+        <section id="galeria" class="galeria" style="display: none;">
+            <div class="container">
+                <h2 class="text-center">Galería</h2>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="g1.jpg" class="img-fluid" alt="Imagen 1">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="g2.png" class="img-fluid" alt="Imagen 2">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="g3" class="img-fluid" alt="Imagen 3">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="g4" class="img-fluid" alt="Imagen 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto" style="display: none;">
+            <div class="container">
+                <h2 class="text-center">Contacto</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Ingresa tu mensaje"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').click(function(event) {
+                event.preventDefault();
+                var target = $(this.hash);
+                $('section').hide();
+                target.show();
+                $('li.nav-item').removeClass('active');
+                $(this).parent().addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
